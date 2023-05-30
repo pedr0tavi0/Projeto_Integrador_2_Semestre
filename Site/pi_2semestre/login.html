@@ -36,19 +36,21 @@
         <div class="login-box">
           <h2>Login</h2>
 
-          <div class="login-field">
-            <input type="text" placeholder="Usuário" name="user" required>
-          </div>
+          <form method="post" action="verificar-login.php">
+            <div class="login-field">
+              <input type="text" placeholder="Usuário" name="user" required>
+            </div>
 
-          <div class="login-field">
-            <input type="password" placeholder="Senha" name="senha" required>
-          </div>
-          <div class="login-button">
-            <button><a  href="usuario.html">Login</a></button>
-            <label>
-              <input type="checkbox" checked="checked" name="remember"> Lembrar?
-            </label>
-          </div>
+            <div class="login-field">
+              <input type="password" placeholder="Senha" name="senha" required>
+            </div>
+            <div class="login-button">
+              <button type="submit">Login</button>
+              <label>
+                <input type="checkbox" checked="checked" name="remember"> Lembrar?
+              </label>
+            </div>
+          </form>
         </div>
       </div>
 

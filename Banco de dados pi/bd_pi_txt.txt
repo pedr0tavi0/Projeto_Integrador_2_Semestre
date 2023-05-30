@@ -1,0 +1,53 @@
+create database Atendimento
+
+
+create table Professor(
+id_professor int primary key auto_increment,
+nome varchar (50) not null,
+telefone varchar (30) not null,
+email varchar (50) not null,
+sexo char (1) not null,
+senha varchar (30) not null
+);
+
+
+create table Medico(
+id_medico int primary key auto_increment,
+nome varchar (50) not null,
+telefone varchar(30) not null,
+email varchar (50) not null,
+sexo char (1) not null,
+senha varchar (30) not null
+);
+
+
+create table Endereco (
+id_endereco int primary key auto_increment,
+cidade varchar (30),
+bairro varchar (30),
+estado char(2),
+cep int,
+id_prof int unique,
+
+constraint fk_id_prof FOREIGN KEY (id_prof)
+	REFERENCES Professor(id_professor)
+	on delete restrict
+	on update cascade
+);
+
+
+create table consulta (
+id_consulta int primary key auto_increment,
+data date not null,
+id_prof int not null,
+id_med int not null,
+
+
+constraint fk_id_profc FOREIGN KEY (id_prof)
+	REFERENCES Professor(id_professor),
+constraint fk_id_medc FOREIGN KEY (id_med)
+	REFERENCES Medico(id_medico)
+	on delete restrict
+	on update cascade
+);
+
